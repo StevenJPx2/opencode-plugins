@@ -6,6 +6,7 @@ import {
   ARTIFACT_HOST,
   DEFAULT_STYLES,
   HEALTH_SERVICE,
+  MAX_IMAGE_BYTES,
   MAX_MERMAID_SOURCE_CHARS,
   artifactPath,
   composeContent,
@@ -308,5 +309,92 @@ ${diagram}
     expect(html).not.toContain("<svg")
     expect(html).not.toContain("<figure")
     expect(html).not.toContain("ondine-flowchart")
+  })
+})
+
+describe("artifact markdown images", () => {
+  const PNG = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAF/gL+5gUAAAAASUVORK5CYII="
+
+  test("embeds one local image with its alt text as a caption", () => {
+    const path = join(cacheRoot, "chart.png")
+    writeFileSync(path, Buffer.from(PNG, "base64"))
+    const html = renderMarkdown(`![Sales by region](${path})`)
+    expect(html).toContain(`id="image1" class="artifact-image"`)
+    expect(html).toContain("data:image/png;base64,")
+    expect(html).toContain("alt=\"Sales by region\"")
+    expect(html).toContain("<figcaption>Sales by region</figcaption>")
+    expect(html).not.toContain('class="artifact-image artifact-image-error"')
+  })
+
+  test("embeds several images with unique ids and supports angle-bracket paths", () => {
+    const first = join(cacheRoot, "one.png")
+    const second = join(cacheRoot, "two.png")
+    writeFileSync(first, Buffer.from(PNG, "base64"))
+    writeFileSync(second, Buffer.from(PNG, "base64"))
+    const html = renderMarkdown(`![First](${first})\n\n![Second](<${second}>)`)
+    expect([...html.matchAll(/<figure id="([^"]+)"/g)].map((match) => match[1])).toEqual(["image1", "image2"])
+    expect(html.match(/<img /g)?.length).toBe(2)
+    expect(html).toContain("<figcaption>First</figcaption>")
+    expect(html).toContain("<figcaption>Second</figcaption>")
+  })
+
+  test("escapes the caption and alt text", () => {
+    const path = join(cacheRoot, "escaped.png")
+    writeFileSync(path, Buffer.from(PNG, "base64"))
+    const html = renderMarkdown(`![<b>& "x"</b>](<${path}>)`)
+    expect(html).toContain("<figcaption>&lt;b&gt;&amp; &quot;x&quot;&lt;/b&gt;</figcaption>")
+    expect(html).toContain("alt=\"&lt;b&gt;&amp; &quot;x&quot;&lt;/b&gt;\"")
+    expect(html).not.toContain("<figcaption><b>")
+  })
+
+  test("rejects unsupported image types", () => {
+    const path = join(cacheRoot, "notes.txt")
+    writeFileSync(path, "not an image")
+    const html = renderMarkdown(`![Notes](${path})`)
+    expect(html).toContain("artifact-image-error")
+    expect(html).toContain("unsupported image type")
+    expect(html).not.toContain("<img ")
+  })
+
+  test("reports a missing local image without breaking the artifact", () => {
+    const html = renderMarkdown(`![Gone](${join(cacheRoot, "missing.png")})`)
+    expect(html).toContain("artifact-image-error")
+    expect(html).toContain("could not read image")
+    expect(html).not.toContain("<img ")
+  })
+
+  test("reports an oversized image", () => {
+    const path = join(cacheRoot, "huge.png")
+    writeFileSync(path, Buffer.concat([Buffer.from(PNG, "base64"), Buffer.alloc(MAX_IMAGE_BYTES)]))
+    const html = renderMarkdown(`![Huge](${path})`)
+    expect(html).toContain("artifact-image-error")
+    expect(html).toContain("over the 100000 byte limit")
+    expect(html).not.toContain("<img ")
+  })
+
+  test("leaves remote image URLs untouched", () => {
+    const html = renderMarkdown("![Remote](https://example.com/chart.png)")
+    expect(html).toContain("https://example.com/chart.png")
+    expect(html).not.toContain('class="artifact-image"')
+    expect(html).not.toContain("data:image")
+  })
+
+  test("keeps plain Markdown unchanged", () => {
+    const html = renderMarkdown("# Plain\n\nJust text.")
+    expect(html).toContain("<h1>Plain</h1>")
+    expect(html).not.toContain("<figure")
+    expect(html).not.toContain("data:image")
+  })
+
+  test("still renders Mermaid fences alongside images", () => {
+    const path = join(cacheRoot, "with-mermaid.png")
+    writeFileSync(path, Buffer.from(PNG, "base64"))
+    const fence = String.fromCharCode(96).repeat(3)
+    const markdown = `![Chart](${path})\n\n${fence}mermaid\nflowchart LR\n  A --> B\n${fence}`
+    const html = renderMarkdown(markdown)
+    expect(html).toContain("data:image/png;base64,")
+    expect(html).toContain("<figcaption>Chart</figcaption>")
+    expect(html).toContain("ondine-flowchart")
+    expect(html).toContain("<svg")
   })
 })
