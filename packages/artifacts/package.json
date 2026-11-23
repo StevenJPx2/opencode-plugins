@@ -1,0 +1,10 @@
+{
+  "name": "@opencode-plugins/artifacts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "ondine": "0.0.3"
+  }
+}
