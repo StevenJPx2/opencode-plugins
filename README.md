@@ -13,6 +13,15 @@ A Bun/TypeScript workspace for the small OpenCode plugins that used to live in d
 | packages/codemode-only | codemode-only | Move direct tools into Code Mode while keeping question and todowrite direct. |
 | packages/pdf-ocr | pdf-ocr | Wrap the read tool to prepend OCR text for PDF files. |
 
+## Larger plugins
+
+The larger OpenCode plugins live in their own repositories:
+
+- [opencode-todos](https://github.com/StevenJPx2/opencode-todos)
+- [opencode-agents](https://github.com/StevenJPx2/opencode-agents)
+- [opencode-history](https://github.com/StevenJPx2/opencode-history)
+- [opencode-antigravity](https://github.com/StevenJPx2/opencode-antigravity) (paused)
+
 ## Development
 
 ```sh
