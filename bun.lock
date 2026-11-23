@@ -47,6 +47,13 @@
         "solid-js": "^1.9.0",
       },
     },
+    "packages/todos": {
+      "name": "@opencode-plugins/todos",
+      "version": "0.0.0",
+      "dependencies": {
+        "@opencode/plugin": "2.0.12",
+      },
+    },
   },
   "packages": {
     "@ai-sdk/provider": ["@ai-sdk/provider@3.0.8", "", { "dependencies": { "json-schema": "^0.4.0" } }, "sha512-oGMAgGoQdBXbZqNG0Ze56CHjDZ1IDYOwGYxYjO5KLSlz5HiNQ9udIXsPZ61VWaHGZ5XW/jyjmr6t2xz2jGVwbQ=="],
@@ -170,6 +177,8 @@
     "@opencode-plugins/pdf-ocr": ["@opencode-plugins/pdf-ocr@workspace:packages/pdf-ocr"],
 
     "@opencode-plugins/quick-quote": ["@opencode-plugins/quick-quote@workspace:packages/quick-quote"],
+
+    "@opencode-plugins/todos": ["@opencode-plugins/todos@workspace:packages/todos"],
 
     "@opencode/ai": ["@opencode/ai@2.0.12", "", { "dependencies": { "@aws-sdk/credential-providers": "3.1057.0", "@opencode/schema": "2.0.12", "@smithy/eventstream-codec": "4.2.14", "@smithy/util-utf8": "4.2.2", "aws4fetch": "1.0.20", "effect": "4.0.0-rc.112", "google-auth-library": "10.5.0" } }, "sha512-3ODFv7a3mKHZ92uUgJDKUM8wY2akNwpvC6YDck0U2gwkc6zfXwNXXpWAEjhdlHPujmQub6dNb0FS5St4oKpSNQ=="],
 
