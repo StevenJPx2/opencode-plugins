@@ -1,0 +1,12 @@
+{
+  "name": "@opencode-plugins/quick-quote",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "tui.ts",
+  "dependencies": {
+    "@opentui/core": "0.9.7",
+    "marked": "17.0.1",
+    "solid-js": "^1.9.0"
+  }
+}

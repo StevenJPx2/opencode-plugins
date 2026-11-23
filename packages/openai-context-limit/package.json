@@ -1,0 +1,7 @@
+{
+  "name": "@opencode-plugins/openai-context-limit",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts"
+}
