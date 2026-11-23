@@ -12,6 +12,7 @@ A Bun/TypeScript workspace for the small OpenCode plugins that used to live in d
 | packages/quick-quote | quick-quote | TUI plugin that inserts random literary quotes as blockquotes. |
 | packages/codemode-only | codemode-only | Move direct tools into Code Mode while keeping question and todowrite direct. |
 | packages/pdf-ocr | pdf-ocr | Wrap the read tool to prepend OCR text for PDF files. |
+| packages/todos | opencode-todos | Reminds the agent to carry on when it stops with built-in todos still open, on top of OpenCode's native todowrite tool and sidebar. |
 
 ## Development
 
