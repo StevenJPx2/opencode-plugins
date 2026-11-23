@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "tui.ts",
+  "main": "index.ts",
   "dependencies": {
     "@opentui/core": "0.9.7",
     "marked": "17.0.1",
