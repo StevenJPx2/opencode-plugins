@@ -10,7 +10,7 @@ import {
   writeFileSync,
 } from "node:fs"
 import { homedir } from "node:os"
-import { join } from "node:path"
+import { extname, join } from "node:path"
 import { spawn, type ChildProcess } from "node:child_process"
 import { render as renderMermaidDiagram, RenderError } from "ondine/compiler"
 
@@ -21,6 +21,7 @@ export const MAX_TITLE_CHARS = 200
 export const MAX_HTML_BYTES = 500_000
 export const MAX_MERMAID_SOURCE_CHARS = 10_000
 export const MAX_MERMAID_SVG_CHARS = 400_000
+export const MAX_IMAGE_BYTES = 100_000
 export const ARTIFACT_HOST = "at.stjhn.xyz"
 export const ID_LENGTH = 6
 const ID_HEX = `[0-9a-f]{${ID_LENGTH}}`
@@ -86,6 +87,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
   --ondine-font: 'JetBrains Mono', Menlo, Monaco, monospace;
 }
 .artifact-mermaid-error { color: ${GRUVBOX.red}; border: 1px solid ${GRUVBOX.red}; padding: 0.75rem 1rem; text-align: left; }
+.artifact-image { margin: 1.25rem 0; text-align: center; }
+.artifact-image img { display: block; margin: 0 auto; }
+.artifact-image figcaption { color: ${GRUVBOX.fg4}; font-size: 0.9rem; margin-top: 0.5rem; }
+.artifact-image-error { color: ${GRUVBOX.red}; border: 1px solid ${GRUVBOX.red}; padding: 0.75rem 1rem; text-align: left; }
 `
 
 export type ArtifactRecord = {
@@ -185,6 +190,65 @@ function mermaidErrorBlock(id: string, message: string): string {
   return `<figure id="${escapeHtml(id)}" class="artifact-mermaid artifact-mermaid-error" role="alert">Mermaid diagram could not be rendered: ${escapeHtml(message)}</figure>`
 }
 
+const IMAGE_MIME: Record<string, string> = {
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".webp": "image/webp",
+}
+
+const MARKDOWN_IMAGE = /!\[([^\]]*)\]\((?:<([^>]+)>|([^\s)]+))(?:\s+"[^"]*")?\)/g
+
+function hasImageSignature(mime: string, bytes: Buffer): boolean {
+  if (mime === "image/png") return bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))
+  if (mime === "image/jpeg") return bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff
+  if (mime === "image/gif") {
+    const header = bytes.subarray(0, 6).toString("ascii")
+    return header === "GIF87a" || header === "GIF89a"
+  }
+  return bytes.subarray(0, 4).toString("ascii") === "RIFF" && bytes.subarray(8, 12).toString("ascii") === "WEBP"
+}
+
+function imageErrorBlock(id: string, message: string): string {
+  return `<figure id="${escapeHtml(id)}" class="artifact-image artifact-image-error" role="alert">Image could not be embedded: ${escapeHtml(message)}</figure>`
+}
+
+export function renderMarkdownImage(alt: string, src: string, id: string): string {
+  if (/^[a-z][a-z0-9+.-]*:/i.test(src) || src.startsWith("//")) return `![${alt}](${src})`
+
+  let path = src
+  if (src.includes("%")) {
+    try { path = decodeURIComponent(src) } catch { /* keep the original path */ }
+  }
+
+  const extension = extname(path).toLowerCase()
+  const mime = IMAGE_MIME[extension]
+  if (!mime) return imageErrorBlock(id, `unsupported image type "${extension || "none"}"`)
+
+  try {
+    const bytes = readFileSync(path)
+    if (bytes.length > MAX_IMAGE_BYTES) {
+      return imageErrorBlock(id, `image is ${bytes.length} bytes, over the ${MAX_IMAGE_BYTES} byte limit; use a smaller file`)
+    }
+    if (!hasImageSignature(mime, bytes)) return imageErrorBlock(id, "image content does not match its file type")
+
+    const dataUri = `data:${mime};base64,${bytes.toString("base64")}`
+    const caption = escapeHtml(alt)
+    return `<figure id="${escapeHtml(id)}" class="artifact-image"><img src="${dataUri}" alt="${caption}" /><figcaption>${caption}</figcaption></figure>`
+  } catch (error) {
+    return imageErrorBlock(id, `could not read image: ${error instanceof Error ? error.message : String(error)}`)
+  }
+}
+
+export function renderMarkdownImages(markdown: string): string {
+  let index = 0
+  return markdown.replace(MARKDOWN_IMAGE, (_match, alt: string, angled: string | undefined, plain: string | undefined) => {
+    index += 1
+    return renderMarkdownImage(alt, angled ?? plain ?? "", `image${index}`)
+  })
+}
+
 export function renderMermaidBlock(source: string, id: string): string {
   const trimmed = source.trim()
   if (trimmed.length === 0) return mermaidErrorBlock(id, "empty diagram")
@@ -218,7 +282,7 @@ export function renderMermaidFences(markdown: string): string {
 }
 
 export function renderMarkdown(markdown: string, styles = DEFAULT_STYLES, title?: string): string {
-  return renderBody(Bun.markdown.html(renderMermaidFences(markdown)), styles, title)
+  return renderBody(Bun.markdown.html(renderMermaidFences(renderMarkdownImages(markdown))), styles, title)
 }
 
 export function replaceFirst(value: string, search: string, replacement: string): string {
