@@ -82,7 +82,7 @@ export function renderReport(context: ReportContext, runs: readonly RunRecord[])
     "# Recall experiment results",
     "",
     `- Date: ${context.date}`,
-    `- Model: \`${context.model}\` (context limit ${context.contextLimit?.toLocaleString("en-US") ?? "unknown"} tokens), OpenCode ${context.opencodeVersion.replace(/^opencode\s+/i, "")}`,
+    `- Model: \`${context.model}\` (${context.contextLimit === null ? "context limit not reported" : `context limit ${context.contextLimit.toLocaleString("en-US")} tokens`}), OpenCode ${context.opencodeVersion.replace(/^opencode\s+/i, "")}`,
     `- Transcripts: ${context.transcripts} × 108 messages, seed ${context.seed}; 12 planted facts each (exact string, constraint, correction, rejected approach at ages ≈10, 50 and 100)`,
     `- Compaction: manual, \`keep.tokens\` = ${context.keepTokens}. ${verbatimNote(runs)}`,
     "",

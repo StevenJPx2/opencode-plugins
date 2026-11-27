@@ -9,7 +9,7 @@ synthetic transcripts with one model.
 | A | OpenCode's native compaction (manual, `keep.tokens` from `--keep-tokens`) |
 | B | A, plus the [opencode-history](https://github.com/StevenJPx2/opencode-history) plugin's `history_search` tool |
 | C | B, plus [`packages/pinned-constraints`](../../packages/pinned-constraints), with one pin pass before compaction |
-| D | Oracle: no compaction, the whole transcript in context (skipped if it would not fit 80% of the context window) |
+| D | Oracle: no compaction, the whole transcript in context (skipped when OpenCode reports a context window it would not fit 80% of) |
 
 Latest results: [`results/results.md`](results/results.md). Raw answers and scores: [`results/runs.json`](results/runs.json).
 
@@ -32,6 +32,7 @@ bun experiments/recall/run.ts --help
 | `--history-plugin` | none | opencode-history checkout or staged release; arms B and C are skipped without it |
 | `--pinned-plugin` | `packages/pinned-constraints` | pinned-constraints package for arm C |
 | `--out` | `experiments/recall/results` | Where `results.md` and `runs.json` are written after every run |
+| `--render-only` | off | Rewrite `results.md` from the `runs.json` in `--out` without running anything |
 
 A full run is 20 runs (5 transcripts × 4 arms) and takes roughly 20 to 30 minutes with the default free model.
 

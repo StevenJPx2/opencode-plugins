@@ -1,6 +1,6 @@
 // Recall experiment: bun experiments/recall/run.ts --help
 import { spawnSync } from "node:child_process"
-import { existsSync, mkdirSync, mkdtempSync, realpathSync, rmSync, writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join, resolve } from "node:path"
 import { parseArgs } from "node:util"
@@ -8,6 +8,7 @@ import { ARMS, runArm } from "./arms.ts"
 import type { ArmID, RunRecord, Settings } from "./arms.ts"
 import { exportCredential, parseModel } from "./opencode.ts"
 import { renderReport } from "./report.ts"
+import type { ReportContext } from "./report.ts"
 import { TRANSCRIPT_COUNT, buildTranscript } from "./transcripts.ts"
 
 const HELP = `Usage: bun experiments/recall/run.ts [options]
@@ -21,6 +22,7 @@ const HELP = `Usage: bun experiments/recall/run.ts [options]
   --history-plugin <dir>     opencode-history release or checkout, for arms B and C
   --pinned-plugin <dir>      pinned-constraints package, for arm C (default packages/pinned-constraints)
   --out <dir>                Where results.md and runs.json go (default experiments/recall/results)
+  --render-only              Rewrite results.md from the runs.json in --out, without running anything
 `
 
 const MAX_CONSECUTIVE_ERRORS = 3
@@ -37,6 +39,7 @@ function options() {
       "history-plugin": { type: "string" },
       "pinned-plugin": { type: "string", default: join(import.meta.dir, "..", "..", "packages", "pinned-constraints") },
       out: { type: "string", default: join(import.meta.dir, "results") },
+      "render-only": { type: "boolean", default: false },
       help: { type: "boolean", default: false },
     },
   })
@@ -67,6 +70,7 @@ function options() {
     historyPlugin: plugin(values["history-plugin"]),
     pinnedPlugin: plugin(values["pinned-plugin"]),
     out: resolve(values.out),
+    renderOnly: values["render-only"],
   }
 }
 
@@ -83,8 +87,15 @@ for (const signal of ["SIGINT", "SIGTERM"] as const) {
   })
 }
 
+function rerender(out: string): void {
+  const { context, runs } = JSON.parse(readFileSync(join(out, "runs.json"), "utf8")) as { context: ReportContext; runs: RunRecord[] }
+  writeFileSync(join(out, "results.md"), renderReport(context, runs))
+  console.log(`results: ${join(out, "results.md")}`)
+}
+
 function main(): void {
   const config = options()
+  if (config.renderOnly) return rerender(config.out)
   const scratch = mkdtempSync(join(realpathSync(tmpdir()), "opencode", "recall-"))
   const settings: Settings = { ...config, scratch, credential: exportCredential(config.model.providerID) }
   const runs: RunRecord[] = []
