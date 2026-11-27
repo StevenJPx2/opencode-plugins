@@ -15,6 +15,11 @@ A Bun/TypeScript workspace for the small OpenCode plugins that used to live in d
 | packages/pinned-constraints | pinned-constraints | Pin user constraints with a verbatim quote as keyed session instructions, re-sent word for word on every request and restored after compaction. |
 | packages/todos | opencode-todos | Reminds the agent to carry on when it stops with built-in todos still open, on top of OpenCode's native todowrite tool and sidebar. |
 
+## Experiments
+
+- [experiments/recall](experiments/recall): a bounded harness comparing native compaction, `history_search` and
+  pinned constraints on synthetic coding transcripts, with its latest results.
+
 ## Larger plugins
 
 The larger OpenCode plugins live in their own repositories:
