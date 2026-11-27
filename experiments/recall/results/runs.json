@@ -1,0 +1,2849 @@
+{
+  "context": {
+    "model": "opencode/hy4-flash-free",
+    "opencodeVersion": "opencode v2.4.1",
+    "keepTokens": 4000,
+    "transcripts": 5,
+    "seed": 1,
+    "contextLimit": null,
+    "date": "2026-11-27"
+  },
+  "runs": [
+    {
+      "arm": "A",
+      "transcript": 0,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t1-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "stg-bkt-y6aqkd",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "await httpClient.request({ method: 'GET', url: '/api/users' })",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Postgres advisory locks",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "12760",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "ff-checkout-wf5sub",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "payload.createdAt = d.toISOString()",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "TOML",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "14",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "sentry-u4jn4k",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "logger.event('user.signedIn', { userId })",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Vitest",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "144",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 38020,
+        "output": 1356,
+        "reasoning": 6373,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 122160,
+      "verbatimFromAge": 20,
+      "reply": "{\n  \"q1\": \"TOML\",\n  \"q2\": \"144\",\n  \"q3\": \"ff-checkout-wf5sub\",\n  \"q4\": \"Vitest\",\n  \"q5\": \"Postgres advisory locks\",\n  \"q6\": \"14\",\n  \"q7\": \"sentry-u4jn4k\",\n  \"q8\": \"payload.createdAt = d.toISOString()\",\n  \"q9\": \"stg-bkt-y6aqkd\",\n  \"q10\": \"await httpClient.request({ method: 'GET', url: '/api/users' })\",\n  \"q11\": \"logger.event('user.signedIn', { userId })\",\n  \"q12\": \"12760\"\n}"
+    },
+    {
+      "arm": "B",
+      "transcript": 0,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t1-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "stg-bkt-y6aqkd",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "await httpClient.request({ method: \"GET\", url: \"/api/users\" })",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Postgres advisory locks",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "12760",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "ff-checkout-wf5sub",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "payload.createdAt = d.toISOString()",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "TOML",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "14",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "sentry-u4jn4k",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "logger.event(\"user signed in\", { userId })",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Vitest",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "144",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "grep": 2,
+        "read": 1,
+        "history_search": 2
+      },
+      "pinTools": {},
+      "usage": {
+        "input": 40009,
+        "output": 1777,
+        "reasoning": 9857,
+        "cacheRead": 33536,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 76657,
+      "verbatimFromAge": 20,
+      "reply": "{\"q1\":\"TOML\",\"q2\":\"144\",\"q3\":\"ff-checkout-wf5sub\",\"q4\":\"Vitest\",\"q5\":\"Postgres advisory locks\",\"q6\":\"14\",\"q7\":\"sentry-u4jn4k\",\"q8\":\"payload.createdAt = d.toISOString()\",\"q9\":\"stg-bkt-y6aqkd\",\"q10\":\"await httpClient.request({ method: \\\"GET\\\", url: \\\"/api/users\\\" })\",\"q11\":\"logger.event(\\\"user signed in\\\", { userId })\",\"q12\":\"12760\"}"
+    },
+    {
+      "arm": "C",
+      "transcript": 0,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t1-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "stg-bkt-y6aqkd",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "httpClient.request({ method: \"GET\", url: \"/api/users\" })",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Postgres advisory locks",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "12760",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "ff-checkout-wf5sub",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "payload.createdAt = d.toISOString()",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "TOML",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "14",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "sentry-u4jn4k",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "logger.event(\"user_signed_in\", { userId })",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Vitest",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "144",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {
+        "constraint_list": 2,
+        "constraint_pin": 21
+      },
+      "usage": {
+        "input": 283644,
+        "output": 2061,
+        "reasoning": 18060,
+        "cacheRead": 113152,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 246705,
+      "verbatimFromAge": 10,
+      "reply": "{\n  \"q1\": \"TOML\",\n  \"q2\": \"144\",\n  \"q3\": \"ff-checkout-wf5sub\",\n  \"q4\": \"Vitest\",\n  \"q5\": \"Postgres advisory locks\",\n  \"q6\": \"14\",\n  \"q7\": \"sentry-u4jn4k\",\n  \"q8\": \"payload.createdAt = d.toISOString()\",\n  \"q9\": \"stg-bkt-y6aqkd\",\n  \"q10\": \"httpClient.request({ method: \\\"GET\\\", url: \\\"/api/users\\\" })\",\n  \"q11\": \"logger.event(\\\"user_signed_in\\\", { userId })\",\n  \"q12\": \"12760\"\n}"
+    },
+    {
+      "arm": "D",
+      "transcript": 0,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t1-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "stg-bkt-y6aqkd",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "httpClient.request({ method: \"GET\", url: \"/api/users\" });",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Postgres advisory locks",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "12760",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "ff-checkout-wf5sub",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "payload.createdAt = d.toISOString();",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "TOML",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "14",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "sentry-u4jn4k",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "logger.event(\"user_signed_in\", { userId });",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Vitest",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t1-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "144",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 27569,
+        "output": 123,
+        "reasoning": 2371,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 32480,
+      "verbatimFromAge": null,
+      "reply": "{\"q1\":\"TOML\",\"q2\":\"144\",\"q3\":\"ff-checkout-wf5sub\",\"q4\":\"Vitest\",\"q5\":\"Postgres advisory locks\",\"q6\":\"14\",\"q7\":\"sentry-u4jn4k\",\"q8\":\"payload.createdAt = d.toISOString();\",\"q9\":\"stg-bkt-y6aqkd\",\"q10\":\"httpClient.request({ method: \\\"GET\\\", url: \\\"/api/users\\\" });\",\"q11\":\"logger.event(\\\"user_signed_in\\\", { userId });\",\"q12\":\"12760\"}"
+    },
+    {
+      "arm": "A",
+      "transcript": 1,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t2-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "miglock-dmx9v5",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const price = 1250n",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "SQS",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "685",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "graf-ecws5y",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const url = config.get('DATABASE_URL')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Kysely",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "1279",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "pd-esc-39tujy",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "return Result.err(\"invalid email\")",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Hono",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "24",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 37391,
+        "output": 1032,
+        "reasoning": 6975,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 100603,
+      "verbatimFromAge": 20,
+      "reply": "{\"q1\":\"Kysely\",\"q2\":\"pd-esc-39tujy\",\"q3\":\"Hono\",\"q4\":\"miglock-dmx9v5\",\"q5\":\"685\",\"q6\":\"SQS\",\"q7\":\"return Result.err(\\\"invalid email\\\")\",\"q8\":\"graf-ecws5y\",\"q9\":\"24\",\"q10\":\"const price = 1250n\",\"q11\":\"const url = config.get('DATABASE_URL')\",\"q12\":\"1279\"}"
+    },
+    {
+      "arm": "B",
+      "transcript": 1,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t2-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "miglock-dmx9v5",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const price = 1250n;",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "SQS",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "685",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "graf-ecws5y",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const url = config.get('DATABASE_URL');",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Kysely",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "1279",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "pd-esc-39tujy",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "return Result.err(\"invalid email\");",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Hono",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "24",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "history_search": 4,
+        "opencode_list_mcp_resources": 1
+      },
+      "pinTools": {},
+      "usage": {
+        "input": 39699,
+        "output": 1354,
+        "reasoning": 3897,
+        "cacheRead": 20992,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 104889,
+      "verbatimFromAge": 20,
+      "reply": "{\"q1\":\"Kysely\",\"q2\":\"pd-esc-39tujy\",\"q3\":\"Hono\",\"q4\":\"miglock-dmx9v5\",\"q5\":\"685\",\"q6\":\"SQS\",\"q7\":\"return Result.err(\\\"invalid email\\\");\",\"q8\":\"graf-ecws5y\",\"q9\":\"24\",\"q10\":\"const price = 1250n;\",\"q11\":\"const url = config.get('DATABASE_URL');\",\"q12\":\"1279\"}"
+    },
+    {
+      "arm": "C",
+      "transcript": 1,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t2-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "miglock-dmx9v5",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const price = 1250n;",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "SQS",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "685",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "graf-ecws5y",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const url = config.get('DATABASE_URL');",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Kysely",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "1279",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "pd-esc-39tujy",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "return Result.err(\"invalid email\");",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Hono",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "24",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "constraint_list": 1,
+        "history_search": 9
+      },
+      "pinTools": {
+        "constraint_list": 2,
+        "constraint_pin": 19
+      },
+      "usage": {
+        "input": 160457,
+        "output": 2324,
+        "reasoning": 7576,
+        "cacheRead": 138752,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 76406,
+      "verbatimFromAge": 12,
+      "reply": "{\n  \"q1\": \"Kysely\",\n  \"q2\": \"pd-esc-39tujy\",\n  \"q3\": \"Hono\",\n  \"q4\": \"miglock-dmx9v5\",\n  \"q5\": \"685\",\n  \"q6\": \"SQS\",\n  \"q7\": \"return Result.err(\\\"invalid email\\\");\",\n  \"q8\": \"graf-ecws5y\",\n  \"q9\": \"24\",\n  \"q10\": \"const price = 1250n;\",\n  \"q11\": \"const url = config.get('DATABASE_URL');\",\n  \"q12\": \"1279\"\n}"
+    },
+    {
+      "arm": "D",
+      "transcript": 1,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t2-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "miglock-dmx9v5",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const price = 1250n;",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "SQS",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "685",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "graf-ecws5y",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const url = config.get('DATABASE_URL');",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Kysely",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "1279",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "pd-esc-39tujy",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "return Result.err(\"Invalid email address\");",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Hono",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t2-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "24",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "grep": 1,
+        "glob": 1,
+        "read": 1
+      },
+      "pinTools": {},
+      "usage": {
+        "input": 28592,
+        "output": 191,
+        "reasoning": 1463,
+        "cacheRead": 55296,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 19939,
+      "verbatimFromAge": null,
+      "reply": "{\"q1\":\"Kysely\",\"q2\":\"pd-esc-39tujy\",\"q3\":\"Hono\",\"q4\":\"miglock-dmx9v5\",\"q5\":\"685\",\"q6\":\"SQS\",\"q7\":\"return Result.err(\\\"Invalid email address\\\");\",\"q8\":\"graf-ecws5y\",\"q9\":\"24\",\"q10\":\"const price = 1250n;\",\"q11\":\"const url = config.get('DATABASE_URL');\",\"q12\":\"1279\"}"
+    },
+    {
+      "arm": "A",
+      "transcript": 2,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t3-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "sess-ppsvmf",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const id = newId('invoice')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Valibot",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "136",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "audit-evt-4qa4km",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const user = (await sql`SELECT * FROM users WHERE id = ${userId}`)[0]",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Unleash",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "76",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "tnt-pbm5yv",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const day = formatDate(d, 'yyyy-MM-dd')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Turborepo",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "300",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 37994,
+        "output": 1758,
+        "reasoning": 5069,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 36023,
+      "verbatimFromAge": 19,
+      "reply": "{\n  \"q1\": \"sess-ppsvmf\",\n  \"q2\": \"300\",\n  \"q3\": \"const day = formatDate(d, 'yyyy-MM-dd')\",\n  \"q4\": \"const id = newId('invoice')\",\n  \"q5\": \"const user = (await sql`SELECT * FROM users WHERE id = ${userId}`)[0]\",\n  \"q6\": \"Turborepo\",\n  \"q7\": \"Valibot\",\n  \"q8\": \"76\",\n  \"q9\": \"136\",\n  \"q10\": \"Unleash\",\n  \"q11\": \"tnt-pbm5yv\",\n  \"q12\": \"audit-evt-4qa4km\"\n}"
+    },
+    {
+      "arm": "B",
+      "transcript": 2,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t3-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "sess-ppsvmf",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const id = newId('inv')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Valibot",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "136",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "audit-evt-4qa4km",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const row = await sql`SELECT * FROM users WHERE id = ${userId}`",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Unleash",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "76",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "tnt-pbm5yv",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const day = formatDate(d, 'yyyy-MM-dd')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Turborepo",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "300",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "grep": 3,
+        "glob": 1
+      },
+      "pinTools": {},
+      "usage": {
+        "input": 39518,
+        "output": 1537,
+        "reasoning": 6999,
+        "cacheRead": 22016,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 50395,
+      "verbatimFromAge": 19,
+      "reply": "{\"q1\":\"sess-ppsvmf\",\"q2\":\"300\",\"q3\":\"const day = formatDate(d, 'yyyy-MM-dd')\",\"q4\":\"const id = newId('inv')\",\"q5\":\"const row = await sql`SELECT * FROM users WHERE id = ${userId}`\",\"q6\":\"Turborepo\",\"q7\":\"Valibot\",\"q8\":\"76\",\"q9\":\"136\",\"q10\":\"Unleash\",\"q11\":\"tnt-pbm5yv\",\"q12\":\"audit-evt-4qa4km\"}"
+    },
+    {
+      "arm": "C",
+      "transcript": 2,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t3-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "sess-ppsvmf",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const id = newId('inv')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Valibot",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "136",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "audit-evt-4qa4km",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const row = await sql`SELECT * FROM users WHERE id = ${userId}`",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Unleash",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "76",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "tnt-pbm5yv",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const day = formatDate(d, 'yyyy-MM-dd')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Turborepo",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "300",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {
+        "constraint_list": 1,
+        "constraint_pin": 22
+      },
+      "usage": {
+        "input": 89164,
+        "output": 2474,
+        "reasoning": 10222,
+        "cacheRead": 58880,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 77279,
+      "verbatimFromAge": 12,
+      "reply": "{\"q1\":\"sess-ppsvmf\",\"q2\":\"300\",\"q3\":\"const day = formatDate(d, 'yyyy-MM-dd')\",\"q4\":\"const id = newId('inv')\",\"q5\":\"const row = await sql`SELECT * FROM users WHERE id = ${userId}`\",\"q6\":\"Turborepo\",\"q7\":\"Valibot\",\"q8\":\"76\",\"q9\":\"136\",\"q10\":\"Unleash\",\"q11\":\"tnt-pbm5yv\",\"q12\":\"audit-evt-4qa4km\"}"
+    },
+    {
+      "arm": "D",
+      "transcript": 2,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t3-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "sess-ppsvmf",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const id = newId('invoice')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "Valibot",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "136",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "audit-evt-4qa4km",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "const user = await sql`SELECT * FROM users WHERE id = ${userId}`",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Unleash",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "76",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "tnt-pbm5yv",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const day = formatDate(d, 'yyyy-MM-dd')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Turborepo",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t3-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "300",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 27123,
+        "output": 163,
+        "reasoning": 683,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 11334,
+      "verbatimFromAge": null,
+      "reply": "{\n  \"q1\": \"sess-ppsvmf\",\n  \"q2\": \"300\",\n  \"q3\": \"const day = formatDate(d, 'yyyy-MM-dd')\",\n  \"q4\": \"const id = newId('invoice')\",\n  \"q5\": \"const user = await sql`SELECT * FROM users WHERE id = ${userId}`\",\n  \"q6\": \"Turborepo\",\n  \"q7\": \"Valibot\",\n  \"q8\": \"76\",\n  \"q9\": \"136\",\n  \"q10\": \"Unleash\",\n  \"q11\": \"tnt-pbm5yv\",\n  \"q12\": \"audit-evt-4qa4km\"\n}"
+    },
+    {
+      "arm": "A",
+      "transcript": 3,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t4-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "x-int-78t5q9",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const enabled = flags.isOn('new-search')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "In-process LRU cache",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "4348",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "recon-k8ne99",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "await clock.sleep(250)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "HttpOnly session cookies",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "311",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "base-fmk6u2",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const file = path.join(dir, 'config.json')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Postgres full-text search",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "38",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 37616,
+        "output": 1166,
+        "reasoning": 3860,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 28025,
+      "verbatimFromAge": 20,
+      "reply": "{\"q1\":\"await clock.sleep(250)\",\"q2\":\"4348\",\"q3\":\"HttpOnly session cookies\",\"q4\":\"x-int-78t5q9\",\"q5\":\"Postgres full-text search\",\"q6\":\"recon-k8ne99\",\"q7\":\"In-process LRU cache\",\"q8\":\"base-fmk6u2\",\"q9\":\"const file = path.join(dir, 'config.json')\",\"q10\":\"311\",\"q11\":\"38\",\"q12\":\"const enabled = flags.isOn('new-search')\"}"
+    },
+    {
+      "arm": "B",
+      "transcript": 3,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t4-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "x-int-78t5q9",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const enabled = flags.isOn('new-search')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "in-process LRU cache",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "4348",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "recon-k8ne99",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "await clock.sleep(250)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "HttpOnly session cookies",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "311",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "base-fmk6u2",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const file = path.join(dir, 'config.json')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Postgres full-text search",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "38",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 38302,
+        "output": 1317,
+        "reasoning": 5916,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 47118,
+      "verbatimFromAge": 20,
+      "reply": "{\n  \"q1\": \"await clock.sleep(250)\",\n  \"q2\": \"4348\",\n  \"q3\": \"HttpOnly session cookies\",\n  \"q4\": \"x-int-78t5q9\",\n  \"q5\": \"Postgres full-text search\",\n  \"q6\": \"recon-k8ne99\",\n  \"q7\": \"in-process LRU cache\",\n  \"q8\": \"base-fmk6u2\",\n  \"q9\": \"const file = path.join(dir, 'config.json')\",\n  \"q10\": \"311\",\n  \"q11\": \"38\",\n  \"q12\": \"const enabled = flags.isOn('new-search')\"\n}"
+    },
+    {
+      "arm": "C",
+      "transcript": 3,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t4-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "x-int-78t5q9",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const enabled = flags.isOn('new-search')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "In-process LRU cache",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "4348",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "recon-k8ne99",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "await clock.sleep(250)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "HttpOnly session cookies",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "311",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "base-fmk6u2",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const file = path.join(dir, 'config.json')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Postgres full-text search",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "38",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {
+        "constraint_list": 1,
+        "constraint_pin": 23
+      },
+      "usage": {
+        "input": 88228,
+        "output": 2094,
+        "reasoning": 7545,
+        "cacheRead": 56320,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 60924,
+      "verbatimFromAge": 10,
+      "reply": "{\"q1\":\"await clock.sleep(250)\",\"q2\":\"4348\",\"q3\":\"HttpOnly session cookies\",\"q4\":\"x-int-78t5q9\",\"q5\":\"Postgres full-text search\",\"q6\":\"recon-k8ne99\",\"q7\":\"In-process LRU cache\",\"q8\":\"base-fmk6u2\",\"q9\":\"const file = path.join(dir, 'config.json')\",\"q10\":\"311\",\"q11\":\"38\",\"q12\":\"const enabled = flags.isOn('new-search')\"}"
+    },
+    {
+      "arm": "D",
+      "transcript": 3,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t4-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "x-int-78t5q9",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "const enabled = flags.isOn('new-search')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "in-process LRU cache",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "4348",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "recon-k8ne99",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "await clock.sleep(250)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "HttpOnly session cookies",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "311",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "base-fmk6u2",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const file = path.join(dir, 'config.json')",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "Postgres full-text search",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t4-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "38",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 27310,
+        "output": 159,
+        "reasoning": 1117,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 8720,
+      "verbatimFromAge": null,
+      "reply": "{\n  \"q1\": \"await clock.sleep(250)\",\n  \"q2\": \"4348\",\n  \"q3\": \"HttpOnly session cookies\",\n  \"q4\": \"x-int-78t5q9\",\n  \"q5\": \"Postgres full-text search\",\n  \"q6\": \"recon-k8ne99\",\n  \"q7\": \"in-process LRU cache\",\n  \"q8\": \"base-fmk6u2\",\n  \"q9\": \"const file = path.join(dir, 'config.json')\",\n  \"q10\": \"311\",\n  \"q11\": \"38\",\n  \"q12\": \"const enabled = flags.isOn('new-search')\"\n}"
+    },
+    {
+      "arm": "A",
+      "transcript": 4,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t5-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "kv-pay-rwuauw",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "export function parseInvoice(): void {}",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "S3 presigned uploads",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "115",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "canary-h6amyc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "throw new AppError(\"NOT_FOUND\", \"Order not found\")",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Separate Temporal workflow",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "736",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "ci-cache-phnntc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const digest = hash.sha256(body)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "esbuild",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "32",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "opencode_list_mcp_resources": 1
+      },
+      "pinTools": {},
+      "usage": {
+        "input": 38286,
+        "output": 1436,
+        "reasoning": 6347,
+        "cacheRead": 10240,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 44089,
+      "verbatimFromAge": 20,
+      "reply": "{\"q1\":\"Separate Temporal workflow\",\"q2\":\"736\",\"q3\":\"esbuild\",\"q4\":\"32\",\"q5\":\"const digest = hash.sha256(body)\",\"q6\":\"kv-pay-rwuauw\",\"q7\":\"ci-cache-phnntc\",\"q8\":\"S3 presigned uploads\",\"q9\":\"throw new AppError(\\\"NOT_FOUND\\\", \\\"Order not found\\\")\",\"q10\":\"export function parseInvoice(): void {}\",\"q11\":\"115\",\"q12\":\"canary-h6amyc\"}"
+    },
+    {
+      "arm": "B",
+      "transcript": 4,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t5-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "kv-pay-rwuauw",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "export function parseInvoice() {}",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "S3 presigned uploads",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "115",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "canary-h6amyc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "throw new AppError(\"NOT_FOUND\", \"Order not found\")",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Separate Temporal workflow for scheduled jobs",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "736",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "ci-cache-phnntc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const digest = hash.sha256(body)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "esbuild",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "32",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {
+        "history_search": 3
+      },
+      "pinTools": {},
+      "usage": {
+        "input": 39095,
+        "output": 1282,
+        "reasoning": 6275,
+        "cacheRead": 10240,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 44865,
+      "verbatimFromAge": 20,
+      "reply": "{\"q1\":\"Separate Temporal workflow for scheduled jobs\",\"q2\":\"736\",\"q3\":\"esbuild\",\"q4\":\"32\",\"q5\":\"const digest = hash.sha256(body)\",\"q6\":\"kv-pay-rwuauw\",\"q7\":\"ci-cache-phnntc\",\"q8\":\"S3 presigned uploads\",\"q9\":\"throw new AppError(\\\"NOT_FOUND\\\", \\\"Order not found\\\")\",\"q10\":\"export function parseInvoice() {}\",\"q11\":\"115\",\"q12\":\"canary-h6amyc\"}"
+    },
+    {
+      "arm": "C",
+      "transcript": 4,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t5-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "kv-pay-rwuauw",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "export function parseInvoice() {}",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "S3 presigned uploads",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "115",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "canary-h6amyc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "throw new AppError(\"NOT_FOUND\", \"Order not found\")",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "Separate Temporal workflow",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "736",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "ci-cache-phnntc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const digest = hash.sha256(body)",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "esbuild",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "32",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {
+        "constraint_list": 1,
+        "constraint_pin": 20
+      },
+      "usage": {
+        "input": 84510,
+        "output": 2067,
+        "reasoning": 5505,
+        "cacheRead": 59392,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 51684,
+      "verbatimFromAge": 12,
+      "reply": "{\"q1\":\"Separate Temporal workflow\",\"q2\":\"736\",\"q3\":\"esbuild\",\"q4\":\"32\",\"q5\":\"const digest = hash.sha256(body)\",\"q6\":\"kv-pay-rwuauw\",\"q7\":\"ci-cache-phnntc\",\"q8\":\"S3 presigned uploads\",\"q9\":\"throw new AppError(\\\"NOT_FOUND\\\", \\\"Order not found\\\")\",\"q10\":\"export function parseInvoice() {}\",\"q11\":\"115\",\"q12\":\"canary-h6amyc\"}"
+    },
+    {
+      "arm": "D",
+      "transcript": 4,
+      "status": "ok",
+      "scores": [
+        {
+          "id": "t5-exact-10",
+          "kind": "exact",
+          "bucket": 10,
+          "age": 16,
+          "answer": "kv-pay-rwuauw",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-10",
+          "kind": "constraint",
+          "bucket": 10,
+          "age": 14,
+          "answer": "export function parseInvoice() {}",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-10",
+          "kind": "rejected",
+          "bucket": 10,
+          "age": 12,
+          "answer": "S3 presigned uploads",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-10",
+          "kind": "correction",
+          "bucket": 10,
+          "age": 10,
+          "answer": "115",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-50",
+          "kind": "exact",
+          "bucket": 50,
+          "age": 56,
+          "answer": "canary-h6amyc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-50",
+          "kind": "constraint",
+          "bucket": 50,
+          "age": 54,
+          "answer": "throw new AppError(\"NOT_FOUND\", \"Order not found\");",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-50",
+          "kind": "rejected",
+          "bucket": 50,
+          "age": 52,
+          "answer": "separate Temporal workflow",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-50",
+          "kind": "correction",
+          "bucket": 50,
+          "age": 50,
+          "answer": "736",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-exact-100",
+          "kind": "exact",
+          "bucket": 100,
+          "age": 106,
+          "answer": "ci-cache-phnntc",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-constraint-100",
+          "kind": "constraint",
+          "bucket": 100,
+          "age": 104,
+          "answer": "const digest = hash.sha256(body);",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-rejected-100",
+          "kind": "rejected",
+          "bucket": 100,
+          "age": 102,
+          "answer": "esbuild",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        },
+        {
+          "id": "t5-correction-100",
+          "kind": "correction",
+          "bucket": 100,
+          "age": 100,
+          "answer": "32",
+          "correct": true,
+          "stale": false,
+          "violation": false
+        }
+      ],
+      "probeTools": {},
+      "pinTools": {},
+      "usage": {
+        "input": 27067,
+        "output": 114,
+        "reasoning": 915,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0
+      },
+      "wallMs": 9692,
+      "verbatimFromAge": null,
+      "reply": "{\"q1\":\"separate Temporal workflow\",\"q2\":\"736\",\"q3\":\"esbuild\",\"q4\":\"32\",\"q5\":\"const digest = hash.sha256(body);\",\"q6\":\"kv-pay-rwuauw\",\"q7\":\"ci-cache-phnntc\",\"q8\":\"S3 presigned uploads\",\"q9\":\"throw new AppError(\\\"NOT_FOUND\\\", \\\"Order not found\\\");\",\"q10\":\"export function parseInvoice() {}\",\"q11\":\"115\",\"q12\":\"canary-h6amyc\"}"
+    }
+  ]
+}

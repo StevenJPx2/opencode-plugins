@@ -13,6 +13,23 @@ synthetic transcripts with one model.
 
 Latest results: [`results/results.md`](results/results.md). Raw answers and scores: [`results/runs.json`](results/runs.json).
 
+## Findings (first full run, 2026-11-27)
+
+`opencode/hy4-flash-free`, 5 transcripts × 4 arms, `keep.tokens` 4000. Small N: no claim of significance.
+
+- **Ceiling.** All 20 runs answered all 12 facts correctly, in every arm and at every age, with no stale override.
+  Compaction kept messages verbatim only from age 10–20 onward, so the age ≈50 and ≈100 facts survived through the
+  summary alone. At about 25,000 tokens and 12 facts the native summary keeps everything, so this size cannot separate
+  the arms.
+- **Cost is the only difference.** Tokens per run: D 29k, A 45k, B 47k, C 153k (about 3.4× A, from the pin pass of
+  about 21 `constraint_pin` calls per run). Wall time per run: D 16 s, A 66 s, B 65 s, C 103 s.
+- **`history_search` cannot help within a session.** Arm B called it 9 times over 5 runs; it excludes the calling
+  session, so none of those calls could reach the facts, and the answers came from the summary.
+- **Pins run end to end.** Arm C made 105 `constraint_pin` calls over 5 runs (it also used `history_search` 9
+  times while answering), but with A at ceiling the pins add no measurable recall here.
+- **Next.** To make the arms separable: transcripts of 150,000+ tokens with dozens of facts, repeated compactions, or a
+  weaker summary model (`agents.compaction.model`).
+
 ## Run it
 
 ```sh
